@@ -23,6 +23,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DrawerContent from './Components/Drawer_Content';
+import AssignmentIN from './Screens/Assignment IN';
+import RootStackScreen from './Screens/Root Stack Screen';
 
 const MainScreenStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -63,14 +65,15 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
       <NavigationContainer>
-        <Drawer.Navigator
+        <RootStackScreen />
+        {/* <Drawer.Navigator
           initialRouteName="LoginScreen"
           screenOptions={{ headerShown: false, drawerPosition: 'right' }}
-          drawerContent={props => <DrawerContent {...props} />}
-        >
+          drawerContent={props => <DrawerContent {...props} />}>
           <Drawer.Screen name="LoginScreen" component={SignInScreen} />
           <Drawer.Screen name="MainScreen" component={MainScreenStackScreen} />
-        </Drawer.Navigator>
+          <Drawer.Screen name="Assignment IN" component={AssignmentIN} />
+        </Drawer.Navigator> */}
       </NavigationContainer>
       {/* </ScrollView> */}
     </SafeAreaView>

@@ -13,7 +13,8 @@ import {
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntD from 'react-native-vector-icons/AntDesign'
-const DrawerContent = props => {
+
+const DrawerContent = (props) => {
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView {...props}>
@@ -43,7 +44,7 @@ const DrawerContent = props => {
                                     size={size} />
                             )}
                             label="Assignments IN"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Assignment IN")} />
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
