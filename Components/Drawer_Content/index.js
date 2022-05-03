@@ -13,8 +13,11 @@ import {
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntD from 'react-native-vector-icons/AntDesign'
+import { AuthContext } from '../context';
 
 const DrawerContent = (props) => {
+    const { signOut } = React.useContext(AuthContext);
+
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView {...props}>
@@ -53,7 +56,7 @@ const DrawerContent = (props) => {
                                     size={size} />
                             )}
                             label="Snoozed"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Snoozed")} />
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
@@ -62,7 +65,8 @@ const DrawerContent = (props) => {
                                     size={size} />
                             )}
                             label="Open Projects"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Open Projects")} />
+
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <AntD
@@ -71,7 +75,8 @@ const DrawerContent = (props) => {
                                     size={size} />
                             )}
                             label="Add Assignment"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Add Assignment")} />
+
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <AntD
@@ -80,7 +85,8 @@ const DrawerContent = (props) => {
                                     size={size} />
                             )}
                             label="Add Project"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Add Project")} />
+
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <AntD
@@ -89,7 +95,8 @@ const DrawerContent = (props) => {
                                     size={size} />
                             )}
                             label="Add Client"
-                            onPress={() => { }} />
+                            onPress={() => props.navigation.navigate("Add Client")} />
+
                     </Drawer.Section>
                 </View >
             </DrawerContentScrollView >
@@ -99,7 +106,7 @@ const DrawerContent = (props) => {
                         <Icon name="exit-to-app" color={color} size={size} />
                     )}
                     label="Sign Out"
-                    onPress={() => { }}
+                    onPress={() => { signOut() }}
                 />
             </Drawer.Section>
         </View >

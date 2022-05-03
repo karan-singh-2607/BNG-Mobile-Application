@@ -4,7 +4,7 @@ import React from 'react'
 const MainScreen = () => {
     return (
         <View>
-            <StatusBar backgroundColor="#008497" barStyle="dark-content" />
+            <StatusBar backgroundColor="#008497" barStyle="light.36+9lllllllll,0l,,-content" />
             <Text>content</Text>
         </View>
     )

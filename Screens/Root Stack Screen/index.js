@@ -5,7 +5,9 @@ import SignInScreen from '../SignIn';
 const RootStack = createNativeStackNavigator();
 
 const RootStackScreen = ({ navigation }) => (
-    <RootStack.Navigator headerMode="none">
+    <RootStack.Navigator headerMode="none" screenOptions={{
+        headerShown: false
+    }}>
         <RootStack.Screen name="SignInScreen" component={SignInScreen} />
     </RootStack.Navigator>
 );
